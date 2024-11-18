@@ -1,5 +1,4 @@
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.*;
 
 public class ClaimContact {
 
@@ -10,7 +9,7 @@ public class ClaimContact {
     private String clmtType;
     private String extAirbagProtectionInd;
     private String extChildPassengerRestraintInd;
-    private String extInjuryInd;
+    private LabeledValue extInjuryInd; // Using LabeledValue for elements with attributes and values
     private String extPassengerPositionCd;
     private String extSeatbeltWornInd;
 
@@ -78,11 +77,11 @@ public class ClaimContact {
     }
 
     @XmlElement(name = "ext_InjuryInd")
-    public String getExtInjuryInd() {
+    public LabeledValue getExtInjuryInd() {
         return extInjuryInd;
     }
 
-    public void setExtInjuryInd(String extInjuryInd) {
+    public void setExtInjuryInd(LabeledValue extInjuryInd) {
         this.extInjuryInd = extInjuryInd;
     }
 
