@@ -1,11 +1,10 @@
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.*;
 
 public class User {
 
     private String id;
     private String publicId;
-    private String tags;
+    private String tags; // Optional attribute
     private String extPrimaryAdjusterCode;
     private String extPrimaryRACFID;
 
