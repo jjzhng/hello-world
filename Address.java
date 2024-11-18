@@ -1,14 +1,15 @@
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.*;
+import java.util.List;
 
 public class Address {
 
     private String id;
     private String publicId;
     private String tags;
+    private String refEntityPublicId; // Optional attribute
     private String county;
     private String postalCode;
-    private State state;
+    private LabeledValue state;
 
     @XmlAttribute(name = "id")
     public String getId() {
@@ -37,6 +38,15 @@ public class Address {
         this.tags = tags;
     }
 
+    @XmlAttribute(name = "ref-entity-public-id")
+    public String getRefEntityPublicId() {
+        return refEntityPublicId;
+    }
+
+    public void setRefEntityPublicId(String refEntityPublicId) {
+        this.refEntityPublicId = refEntityPublicId;
+    }
+
     @XmlElement(name = "County")
     public String getCounty() {
         return county;
@@ -56,11 +66,11 @@ public class Address {
     }
 
     @XmlElement(name = "State")
-    public State getState() {
+    public LabeledValue getState() {
         return state;
     }
 
-    public void setState(State state) {
+    public void setState(LabeledValue state) {
         this.state = state;
     }
 }
