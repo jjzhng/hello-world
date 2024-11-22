@@ -1,0 +1,27 @@
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO transaction_record " +
+                   "(TRANSACTIONTYPE, TRANSACTIONSUBTYPE, TRANSACTIONVERSION, TRANSACTIONTIME, " +
+                   "CLAIMNUMBER, POLICYNUMBER, MESSAGEID, CLIENTAPPLICATION, CLIENTUSERID, " +
+                   "CLIENTREGION, CLIENTOS, CLIENTMACHINE, CLIENTSESSIONID, MESSAGEPAYLOAD, TRANSACTIONID) " +
+                   "VALUES (:transactionType, :transactionSubType, :transactionVersion, :transactionTime, " +
+                   ":claimNumber, :policyNumber, :messageId, :clientApplication, :clientUserId, " +
+                   ":clientRegion, :clientOs, :clientMachine, :clientSessionId, :messagePayload, :transactionId)",
+           nativeQuery = true)
+    void saveTransactionRecord(
+        String transactionType,
+        String transactionSubType,
+        String transactionVersion,
+        String transactionTime,
+        String claimNumber,
+        String policyNumber,
+        String messageId,
+        String clientApplication,
+        String clientUserId,
+        String clientRegion,
+        String clientOs,
+        String clientMachine,
+        String clientSessionId,
+        String messagePayload,
+        String transactionId
+    );
